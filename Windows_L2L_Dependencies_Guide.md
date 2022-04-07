@@ -28,4 +28,46 @@ First, find out what Python version you have within your environment, you can ru
 
 Next, go to this page: http://www.open3d.org/docs/release/getting_started.html 
 
-We are looking for the development version (pip) section: ![open3d Development Image](https://)
+We are looking for the development version (pip) section: ![open3d Development Image](/images/open3d_install_dev.PNG)
+
+Depending on what your `python --version` returned, please select that version from the table. We will right click on the version, and copy the link url. Mine looked like this: https://storage.googleapis.com/open3d-releases-master/python-wheels/open3d-0.15.1-cp38-cp38-win_amd64.whl 
+
+To install this into our environment, we will go back to our command prompt, or open a new one if we closed it. If we closed our commad prompt, make sure to conda activate YOUR_DESIRED_NAME_HERE before completing this step. Once we have ensured we are in our L2L environment, run this:
+
+`pip install $$YOUR COPIED URL`
+
+so, for me:
+
+`pip install https://storage.googleapis.com/open3d-releases-master/python-wheels/open3d-0.15.1-cp38-cp38-win_amd64.whl`
+
+this will pip install direct from this location. We now have successfully installed the correct developmental version of Open3d, which as of April 2022 works with our notebooks.
+
+#### Installing our K4A Drivers and PyK4a Packages
+
+Next, we will be installing the actual K4A Drivers, as well as the PyK4a Python wrapper for k4a. K4A comes from the Azure Kinect SDK Microsoft Kit, which has some good documentation to follow and utilize as you work on the project. 
+
+Go to https://github.com/microsoft/Azure-Kinect-Sensor-SDK/blob/develop/docs/usage.md and install v1.4.1 by clicking on the MSI Azure Kinect SDK 1.4.1.exe
+
+This will put all your k4a drivers, by default into C:\Program Files\Azure Kinect SDK version\sdk
+
+We now want to ensure we add these k4a drivers to our Path Variable - Yours should look something similar to this:
+
+![Environment Path Variable](/images/Path_Variables.PNG)
+
+##### PyK4a Python Wrapper for K4A
+
+This is definitely the most troublesome step going through this a second time, as the error messages can be misleading as to the root issue. Below, I will put a few of the errors you may see; **If you see any of these errors, please see below's steps, which should fix them**
+
+![pyk4a before drivers error](/images/pyk4a_before.PNG)
+
+If you see this image, please ensure you have installed the K4A Drivers Above, as well as added K4A to your Environment Path.
+
+![Microsoft C Error](/images/Microsoft_C_Error.PNG)
+
+If you see this error, it means your Microsoft C++ Tool isn't up to date. 
+**NOTE That if your Microsoft C++ Tool is up to or past 14.0, you need to ensure you have the proper modules with-in the kit. Run the installer again, and select the Desktop Development Kit:**
+
+![Select This Microsft C++](/images/select_this_c.PNG)
+
+
+
