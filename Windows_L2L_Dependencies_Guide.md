@@ -24,8 +24,8 @@ Next, we will get to the more difficult to work with dependencies that I simply 
 
 This is a big one, as I said above, as without it nothing will run. Much of our work thus far has been in part due to this library. As mentioned above, so we need to get the developmental version, meaning we cannot just pip install open3d.
 
-First, find out what Python version you have within your environment, you can run  'python --version'
+First, find out what Python version you have within your environment, you can run  `python --version`
 
 Next, go to this page: http://www.open3d.org/docs/release/getting_started.html 
 
-We are looking for the development version (pip) section: 
+We are looking for the development version (pip) section: ![open3d Development Image](https://)
