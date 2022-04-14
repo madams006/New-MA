@@ -88,4 +88,4 @@ https://www.codegrepper.com/code-examples/whatever/413+request+entity+too+large
 
 The command is ```sudo nano /etc/nginx/nginx.conf``` to edit and add this line - ```client_max_body_size 400M``` - this will require Sudo access, which if you do not have just reach out to Jim Reed. For more information, see the link above, but that alone should fix it.
 
-![AWS EC2 Memory Error](/images/memory_error.PNG)
+![AWS EC2 Memory_Error](/images/memory_error.PNG)
