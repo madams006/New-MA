@@ -2,6 +2,12 @@
 
 Welcome to this guide/walkthrough on getting your Windows PC Ready to perform computation on the various tools and packages we have used thus far at L2L. With much of this work being on the bleeding edge of the bleeding edge, the packages can change rather quickly, and the initial set up can be quite a headache. With this guide, I hope to make the setup of your pc much more accessible, and allow for actual work to be completed, rather than hours spent reinstalling.
 
+## The L2L_Toolset Files & A Quick Note
+
+Within the L2L_Toolset, you will find the l2ltools.py, as well as an initialize_config.py. From there, these files will provide you with much of the same functionality as is used in the Body-Segmentation Notebooks, and are similar to some of the more recent versions and implementations. The more recent demo of this segmentation is built on object-oriented programming, however the core usage of the functions should remain the same/similar. You will also find a testing_l2ltools_library python notebook, which just shows how simple the implementation of these tools becomes as you further along the project in working on pointclouds. This simply allows for cleaner coding, as we can call ```from l2ltools.py import *``` to import all of our necessary functions, and begin working from there.
+
+With that said, I'd like to jump right into the steps for getting you working on the project; also, if anyone has any issues, please feel free to ping me on Slack, or reachout at madams006@regis.edu; I should still be checking it regularly, and I am happy to help, as I spent multiple weeks plagued by errors when starting this project. 
+
 ## Beginning Steps
 
 To begin, I will have attached my actual Conda Environment file here ##INSERT LINK to YML env file here##, which will have many of the dependencies already installed. While this will save what was in my case hours of installing the right dependencies, we still have some work left for us, as many of these packages require special versioning and other system dependencies we may not start with. 
@@ -70,4 +76,16 @@ If you see this error, it means your Microsoft C++ Tool isn't up to date.
 ![Select This Microsft C++](/images/select_this_c.PNG)
 
 
+## Common Error Messages
 
+Firstly, if you haven't read everything above this line, please do so first, as you will find several answers there to many of the issues you may encounter. With that said, below are some of the more unique error messages that you may experience working on this project. 
+
+#### Memory Error when Working on AWS EC2 Instance
+
+This below error is something both I and Matt received on different operations within the AWS EC2 instance - the fix is below:
+
+https://www.codegrepper.com/code-examples/whatever/413+request+entity+too+large
+
+The command is ```sudo nano /etc/nginx/nginx.conf``` to edit and add this line - ```client_max_body_size 400M``` - this will require Sudo access, which if you do not have just reach out to Jim Reed. For more information, see the link above, but that alone should fix it.
+
+![AWS EC2 Memory Error](/images/memory_error.PNG)
